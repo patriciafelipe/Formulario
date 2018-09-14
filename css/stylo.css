@@ -1,0 +1,43 @@
+body{
+	font-family: arial;
+	font-size:11pt;
+}
+select, textarea, input{
+	margin-top:20px;
+	margin-bottom: 20px;
+	background-color: #C5D7FE;
+}
+.quadrado{
+	border-style:solid;
+	border-width:2px;
+	padding:7px;
+}
+#form{
+	position:absolute;
+	top:40px;
+	left:40px;
+	margin-left:300px;
+	margin-right:300px;
+}
+.tit1{
+	border-width:900;
+
+	}
+.tit2{
+border-width:900;
+}
+.tit3{
+	background-color:#9C9C9C
+}
+.tit4{
+	background-color:#9C9C9C
+}
+.tit5{
+	background-color:#9C9C9C
+}
+#myImage{
+			position:absolute;
+			top: -25px;
+			left: 75%;
+			width: 200px;
+}
