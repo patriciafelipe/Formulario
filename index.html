@@ -3,28 +3,28 @@
 		<title> Formulário </title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/stylo.css">
-		<script src="js/funcoes.js"></script> 
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" &lt;script language="JavaScript" type="text/javascript" src="mascaravalidacao.js"></script> 
+		<script src="js/mascaravalidacao.js"></script> 
 	</head>
 		<body>
 		<div id="form">
 			<form action=""><br/>
 			<br>
-	<b><div class="tit1" align=center>Formulário de Solicitação <i>(Pessoa Física)</i></div></b>
-	<img id="myImage" src="img/sic.png" style="width:20%">
-	<div class="borda2"></div>
+	<b><div class="tit1" align=left>Formulário de Solicitação <i>(Pessoa Física)</i></div></b>
+	<div class="borda"><br/></div>
+	<br/>
+	<img id="myImage" src="img/sic.png" style="width:30%">
 		<div class="tit3">As informações abaixo são obrigatórias</div>
 	<br>
 		<div class="quadrado">
-		<b>Nome:<input type="text" name="nome" value="" size="70" pattern="[a-z\s]+$" ></b>
-		<b>CPF:<input type="text" name="cpf" value=""  size="32"></b><br/>
+		<b>Nome:<input type="text" name="nome" value="" size="87" pattern="[a-z\s]+$" ></b>
+		<b>CPF:<input type="text" name="cpf" value="" id="cpf" onKeyPress="mcpf(cpf)"maxlength=14 size="20"></b><br/>
 		Ou, se preferir, informar outro documento de identificação (RG, CNH, Passaporte, RNE ou outro documento válido. Se a opção for por RG, indicar órgão emissor e UF):</b> <br/>
-        <b>Tipo de documento:<input type="text" name="doc" value="" size="50" pattern="[a-z\s]+$" required="yes"> Nº:<input type="text" name="nome" value="" size="40" pattern="[0-9]+$" required="yes"></b><br/>
-		<b>Endereço eletrônico (e-mail):<input type="text" name="email" value="" size="90" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="yes"></b><br/>
+        <b>Tipo de documento: <input type="text" name="doc" value="" size="35"> Nº:<input type="text" name="nome" value="" size="30" pattern="[0-9]+$" required="yes"></b><br/>
+		<b>Endereço eletrônico (e-mail): <input type="text" name="email" value="" size="64" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="yes"></b><br/>
 			<b>ou</b><br/>
-			<b>Endereço fisico (Rua, nº, complemento, Bairro):<input type="text" name="endereco" value="" size="71" ></b><br/>
-			<b> Cidade: <input type="text" name="cidade" value="" size="37" > Estado: <input type="text" name="estado" value="" size="30" > UF: <input type="text" name="uf" value="" size="20" > </b><br>
-			<b> CEP: <input type="text" name="cep" value="" size="50"> País: <input type="text" name="pais" value="" size="52" ></b><br/>
+			<b>Endereço fisico (Rua, nº, complemento, Bairro):<input type="text" name="endereco" value="" size="94" ></b><br/>
+			<b> Cidade: <input type="text" name="cidade" value="" size="30" > Estado: <input type="text" name="estado" value="" size="25" > UF: <input type="text" name="uf" value="" size="7 " > </b><br>
+			<b> CEP: <input type="text" name="cep" value="" id="cep" onkeypress="mcep(cep)" maxlength=9 size="15"> País: <input type="text" name="pais" value="" size="62" ></b><br/>
 			</div>
 			<br>
 			<div class="tit4"> Os campos a seguir são opcionais e se preenchidos contribuirão para a melhoria de nossos serviços</div><br/>
@@ -34,19 +34,23 @@
 			<b>Escolaridade:</b>
 			<br>
 			</b>
-			<input type="radio" name=" " value=" "> Sem Instrução Formal<td></td> <input type="radio" name=" " value=" "> Ensino Superior<td></td> <input type="radio" name=" " value=" "> Doutorado  <br/>
-			<input type="radio" name=" " value=" "> Ensino Fundamental <input type="radio" name=" " value=" "> Especialização<br/>
-			<input type="radio" name=" " value=" "> Ensino Médio <input type="radio" name=" " value=" "> Mestrado<br/>
-			<b>Ocupação principal/Profissão</b><br/>
-			</b><input type="radio" name=" " value=" "> Empregado - Setor Privado <input type="radio" name=" " value=" "> Pesquisador <input type="radio" name=" " value=" "> Servidor público estadual<br/>
-			<input type="radio" name=" " value=" "> Jornalista <input type="radio" name=" " value=" "> Professor <input type="radio" name=" " value=" "> Servidor público Municipal <br/>
-			<input type="radio" name=" " value=" "> Membro de partido político <input type="radio" name=" " value=" "> Estudante <input type="radio" name=" " value=" "> Membro de ONG nacional <br/>
-			<input type="radio" name=" " value=" "> Representante de sindicato <input type="radio" name=" " value=" " Empresário/Empreendedor <input type="radio" name=" " value=" "> Membro de ONG Internacional<br/>
-			<input type="radio" name=" " value=" "> Profis. Liberal/Autonômo <input type="radio" name=" " value=" "> Servidor público federal <br/>
-			<input type="radio" name=" " value=" "> Outras <br>
+			<table border=0>
+			<tr>
+			<td><input type="radio" name=" " value=" "> Sem Instrução Formal</td><td> <input type="radio" name=" " value=" "> Ensino Superior</td><td> <input type="radio" name=" " value=" "> Doutorado</td></tr>
+			<tr><td><input type="radio" name=" " value=" "> Ensino Fundamental</td><td> <input type="radio" name=" " value=" "> Especialização</td></tr>
+			<tr><td><input type="radio" name=" " value=" "> Ensino Médio </td><td><input type="radio" name=" " value=" "> Mestrado</td></tr>
+			</table>
+			<b>Ocupação principal/Profissão</b>
+			<table border=0>
+			<tr><td><input type="radio" name=" " value=" "> Empregado - Setor Privado</td><td><input type="radio" name=" " value=" "> Pesquisador </td><td><input type="radio" name=" " value=" "> Servidor público estadual</td></tr>
+			<tr><td><input type="radio" name=" " value=" "> Jornalista</td><td> <input type="radio" name=" " value=" "> Professor </td><td> <input type="radio" name=" " value=" "> Servidor público Municipal</td></tr>
+			<tr><td><input type="radio" name=" " value=" "> Membro de partido político</td><td> <input type="radio" name=" " value=" "> Estudante</td><td> <input type="radio" name=" " value=" "> Membro de ONG nacional </td></tr>
+			<tr><td><input type="radio" name=" " value=" "> Representante de sindicato </td><td><input type="radio" name=" " value=" "> Empresario\Empreendedor </td><td> <input type="radio" name=" " value=" "> Membro de ONG Internacional</td></tr>
+			<tr><td><input type="radio" name=" " value=" "> Profis. Liberal/Autonômo </td><td> <input type="radio" name=" " value=" "> Servidor público federal</td></tr> 
+			<tr><td><input type="radio" name=" " value=" "> Outras</td></tr>
 			</table>
 			</b>
-			<b> Telefone: <input type="telefone" value="" onKeyPress="mascaratelefone(form1.tel);" "pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$></b><br/>
+			<b> Telefone: <input type="telefone" value="" id ="tel" maxlength=15 onKeyPress="mtel(tel)"></b><br/>
 			</div>
 			<br>
 			<div class="tit5"> Especificação do pedido de acesso à informação</div>
@@ -63,5 +67,6 @@
 			<textarea name="message" rows="20" cols="90"></textarea><br>
 			</div>
 			<input type="submit" value="Enviar">
+			</div>
 		</body>
 		</html>

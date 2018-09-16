@@ -26,18 +26,22 @@ select, textarea, input{
 .tit2{
 border-width:900;
 }
+
 .tit3{
-	background-color:#9C9C9C
+	background-color:#DCDCDC
 }
 .tit4{
-	background-color:#9C9C9C
+	background-color:#DCDCDC
 }
 .tit5{
-	background-color:#9C9C9C
+	background-color:#DCDCDC
+}
+.borda{
+	background-color:#DCDCDC;
 }
 #myImage{
 			position:absolute;
-			top: -25px;
-			left: 75%;
-			width: 200px;
+			top: -21px;
+			left: 72%;
+			width: 300px;
 }
